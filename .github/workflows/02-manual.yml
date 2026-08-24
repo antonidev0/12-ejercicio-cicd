@@ -6,18 +6,30 @@ on:
             logging_level:
                 description: Nivel de logging
                 required: true
+                default: "info"
+                type: choice
+                options:
+                 - info
+                 - debug
+                 - warn
+                 - error
 
             environment:
                 description: Entorno de despliegue
+                type: environment
                 required: true
 
             dry_run:
                 description: Ejecutar en modo simulación
-                required: true
+                required: false
+                default: false
+                type: boolean
 
             reason:
                 description: Motivo de la ejecución
-                required: true
+                required: false
+                default: "Manual excution"
+                type: "string"
             
             
 
