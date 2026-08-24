@@ -45,3 +45,10 @@ jobs:
               run: |
                 echo "Deploying to $ENVIROMMENT"
                   
+            - name: Deploy (solo si es dry-run)
+              if: ${{ inputs.dry_run }}
+              env:
+                ENVIROMMENT: ${{ inputs.environment }}
+              run: |
+                echo "Dry run: no changes applied"
+                  
