@@ -23,7 +23,7 @@ jobs:
                 echo "Event: ${{ github.event_name }}"
                 echo "Issue: ${{ github.event.issue.number }}"
                 echo "Comment: ${{ github.event.comment.body }}"
-
+ 
           - name: Comentar como bot al abrir issue
             if: github.event_name == 'issues' && github.event.action == 'opened'
             run: gh issue comment ${{ github.event.issue.number }} --repo "${{ github.repository }}" --body "Gracias por el aporte,  Revisaremos tu issue pronto."
@@ -43,9 +43,3 @@ jobs:
                 GH_TOKEN="$AUTHOR_TOKEN" gh issue comment "$ISSUE_NUMBER" \
                     --repo "${{ github.repository }}" \
                     --body "Hola, soy el propietario del repositorio respondiendote de modo personal"
-
-
-
-
-
-
